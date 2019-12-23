@@ -1,10 +1,19 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <el-container>
+      <el-header>
+        <div id="nav">
+          <router-link to="/">Home</router-link> |
+          <router-link to="/about">About</router-link>
+        </div>
+      </el-header>
+
+      <el-main>
+        <router-view />
+      </el-main>
+
+      <el-footer></el-footer>
+    </el-container>
   </div>
 </template>
 
@@ -27,6 +36,13 @@
     &.router-link-exact-active {
       color: #42b983;
     }
+  }
+}
+
+.el-row {
+  padding-bottom: 1em;
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 </style>
