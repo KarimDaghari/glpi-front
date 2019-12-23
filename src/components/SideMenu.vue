@@ -1,5 +1,5 @@
 <template>
-  <el-menu :collapse="collapsed">
+  <el-menu :collapse="collapsed" router>
     <el-menu-item @click="collapse()">
       <i
         :class="[collapsed ? 'el-icon-caret-right' : 'el-icon-caret-left']"
@@ -10,7 +10,7 @@
         <i class="el-icon-s-home"></i>
         <span>Parc</span>
       </template>
-      <el-menu-item index="1-1">Ordinateurs</el-menu-item>
+      <el-menu-item index="/computers">Ordinateurs</el-menu-item>
       <el-menu-item index="1-2">Moniteurs</el-menu-item>
       <el-menu-item index="1-1">Logiciels</el-menu-item>
       <el-menu-item index="1-1">Matériels réseau</el-menu-item>
