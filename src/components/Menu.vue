@@ -1,7 +1,14 @@
 <template>
-  <el-menu router mode="horizontal">
-    <el-menu-item index="/">Accueil</el-menu-item>
-    <el-menu-item index="/about">A propos</el-menu-item>
+  <el-menu mode="horizontal">
+    <el-menu-item>
+      <el-input
+        placeholder="Rechercher"
+        prefix-icon="el-icon-search"
+        v-model="searchQuery"
+      >
+      </el-input>
+    </el-menu-item>
+
     <el-menu-item style="float: right" @click="logout()">
       <span>
         <i class="el-icon-switch-button"></i>
@@ -20,6 +27,8 @@ import Component from "vue-class-component";
 
 @Component({})
 export default class extends Vue {
+  searchQuery = null;
+
   logout() {
     this.$store.commit("logout");
     this.$router.push("/login");
