@@ -1,15 +1,22 @@
 <template>
   <div id="app">
     <el-container>
-      <el-header>
-        <template v-if="this.$store.state.auth.isLoggedIn">
+      <template v-if="isLoggedIn()">
+        <el-header>
           <Menu></Menu>
-        </template>
-      </el-header>
+        </el-header>
+      </template>
 
-      <el-main>
-        <router-view />
-      </el-main>
+      <el-container>
+        <template v-if="isLoggedIn()">
+          <el-aside>
+            <side-menu></side-menu>
+          </el-aside>
+        </template>
+        <el-main>
+          <router-view />
+        </el-main>
+      </el-container>
 
       <el-footer></el-footer>
     </el-container>
@@ -20,13 +27,19 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import Menu from "@/components/Menu.vue";
+import SideMenu from "@/components/SideMenu.vue";
 
 @Component({
   components: {
-    Menu
+    Menu,
+    SideMenu
   }
 })
-export default class extends Vue {}
+export default class extends Vue {
+  isLoggedIn() {
+    return this.$store.state.auth.isLoggedIn;
+  }
+}
 </script>
 
 <style lang="scss">
