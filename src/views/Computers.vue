@@ -1,19 +1,38 @@
 <template>
-  <el-table :data="tableData" stripe>
-    <el-table-column label="Nom" sortable prop="name"></el-table-column>
-    <el-table-column label="Entité" prop="entity"></el-table-column>
-    <el-table-column label="Statut" prop="status"></el-table-column>
-    <el-table-column label="Fabricant" prop="maker"></el-table-column>
-    <el-table-column label="N° série" prop="serial"></el-table-column>
-    <el-table-column label="Modèle" prop="model"></el-table-column>
-    <el-table-column label="Système d'exploitation" prop="os"></el-table-column>
-    <el-table-column label="Lieu" prop="place"></el-table-column>
-    <el-table-column
-      label="Dérnière modification"
-      prop="lastModified"
-    ></el-table-column>
-    <el-table-column label="Processeur" prop="cpu"></el-table-column>
-  </el-table>
+  <div>
+    <div style="float: left">
+      <el-button>Actions</el-button>
+      <el-button icon="el-icon-plus" circle></el-button>
+    </div>
+    <el-table :data="tableData" stripe>
+      <el-table-column type="selection" width="55"> </el-table-column>
+      <el-table-column label="Nom" sortable prop="name"></el-table-column>
+      <el-table-column label="Entité" sortable prop="entity"></el-table-column>
+      <el-table-column label="Statut" sortable prop="status"></el-table-column>
+      <el-table-column
+        label="Fabricant"
+        sortable
+        prop="maker"
+      ></el-table-column>
+      <el-table-column
+        label="N° série"
+        sortable
+        prop="serial"
+      ></el-table-column>
+      <el-table-column label="Modèle" sortable prop="model"></el-table-column>
+      <el-table-column
+        label="Système d'exploitation"
+        sortable
+        prop="os"
+      ></el-table-column>
+      <el-table-column label="Lieu" sortable prop="place"></el-table-column>
+      <el-table-column
+        label="Dérnière modification"
+        prop="lastModified"
+      ></el-table-column>
+      <el-table-column label="Processeur" prop="cpu"></el-table-column>
+    </el-table>
+  </div>
 </template>
 
 <script lang="ts">
@@ -25,7 +44,7 @@ export default class extends Vue {
   tableData: any[] = [];
   datum = {
     name: "",
-    entity: "root entity > computer",
+    entity: "root entity",
     status: "En attente",
     maker: "DELL",
     serial: "f1qj5uNhMK",
