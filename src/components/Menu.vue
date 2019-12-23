@@ -22,6 +22,7 @@ import Component from "vue-class-component";
 export default class extends Vue {
   logout() {
     this.$store.commit("logout");
+    this.$router.push("/login");
   }
 }
 </script>
