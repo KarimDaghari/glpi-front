@@ -97,6 +97,7 @@ export default class Login extends Vue {
     const passwordIsValid = this.access.includes(this.password);
 
     if (usernameIsValid && passwordIsValid) {
+      this.$store.commit("login", { username: this.username });
       this.$router.push("/");
     } else {
       this.$notify.error({
