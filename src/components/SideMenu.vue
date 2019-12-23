@@ -73,7 +73,7 @@
       <el-submenu index="5">
         <template #title>
           <i class="el-icon-s-cooperation"></i>
-          <span>Administration</span></template
+          <span style="padding-right: 1.5em">Administration</span></template
         >
         <el-menu-item index="5-1">Utilisateurs</el-menu-item>
         <el-menu-item index="5-1">Profils</el-menu-item>
@@ -83,7 +83,7 @@
       <el-submenu index="6">
         <template #title>
           <i class="el-icon-setting"></i>
-          <span>Configuration</span>
+          <span style="padding-right: 1.5em">Configuration</span>
         </template>
         <el-menu-item index="6-1">Intitulés</el-menu-item>
         <el-menu-item index="6-1">Composants</el-menu-item>

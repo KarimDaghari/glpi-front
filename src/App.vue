@@ -9,7 +9,7 @@
 
       <el-container>
         <template v-if="isLoggedIn()">
-          <el-aside>
+          <el-aside width="">
             <side-menu></side-menu>
           </el-aside>
         </template>
