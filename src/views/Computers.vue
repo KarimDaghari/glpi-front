@@ -41,7 +41,7 @@ export default class extends Vue {
       const data = { ...this.datum };
       data.name = `Computer ${i + 1}`;
       data.serial += `${i}`;
-      this.tableData[i] = data;
+      this.tableData.push(data);
     }
   }
 }
