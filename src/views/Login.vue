@@ -106,11 +106,16 @@ export default class Login extends Vue {
       });
     }
   }
+
+  created() {
+    if (!this.$store.state.auth.isLoggedIn) {
+      {
+        this.$notify.info({
+          title: "Attention",
+          message: "Veuillez vous connectez d'abord."
+        });
+      }
+    }
+  }
 }
 </script>
-
-<style scoped>
-li {
-  list-style-image: "";
-}
-</style>
