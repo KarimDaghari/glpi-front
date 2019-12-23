@@ -1,15 +1,17 @@
 <template>
   <div>
     <el-row type="flex" justify="center">
-      <el-col></el-col>
-      <el-alert title="Comptes" center>
-        <template #default>
-          <p><strong>Administrateur</strong>: admin/admin</p>
-          <p><strong>Technicien</strong>: tech/tech</p>
-          <p><strong>Utilisateur</strong>: user/user</p>
-        </template>
-      </el-alert>
-      <el-col></el-col>
+      <el-col :xs="0"></el-col>
+      <el-col>
+        <el-alert title="Comptes" center>
+          <template #default>
+            <p><strong>Administrateur</strong>: admin/admin</p>
+            <p><strong>Technicien</strong>: tech/tech</p>
+            <p><strong>Utilisateur</strong>: user/user</p>
+          </template>
+        </el-alert>
+      </el-col>
+      <el-col :xs="0"></el-col>
     </el-row>
     <el-row type="flex" justify="center">
       <el-card>
