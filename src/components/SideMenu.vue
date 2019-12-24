@@ -69,16 +69,18 @@
       <el-menu-item index="4-1">Recherches sauvegardées</el-menu-item>
     </el-submenu>
 
-    <template v-if="!isUser()">
-      <el-submenu index="5">
-        <template #title>
-          <i class="el-icon-s-cooperation"></i>
-          <span style="padding-right: 1.5em">Administration</span></template
-        >
-        <el-menu-item index="5-1">Utilisateurs</el-menu-item>
-        <el-menu-item index="5-1">Profils</el-menu-item>
-        <el-menu-item index="5-1">Groupes</el-menu-item>
-      </el-submenu>
+    <template v-if="!(username === 'user')">
+      <template v-if="username !== 'tech'">
+        <el-submenu index="5">
+          <template #title>
+            <i class="el-icon-s-cooperation"></i>
+            <span style="padding-right: 1.5em">Administration</span></template
+          >
+          <el-menu-item index="5-1">Utilisateurs</el-menu-item>
+          <el-menu-item index="5-1">Profils</el-menu-item>
+          <el-menu-item index="5-1">Groupes</el-menu-item>
+        </el-submenu>
+      </template>
 
       <el-submenu index="6">
         <template #title>
@@ -102,8 +104,8 @@ import Component from "vue-class-component";
 export default class SideMenu extends Vue {
   collapsed = true;
 
-  isUser() {
-    return this.$store.state.auth.user.username === "user";
+  get username() {
+    return this.$store.state.auth.user.username;
   }
 
   collapse() {
