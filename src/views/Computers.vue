@@ -61,22 +61,11 @@
 <script lang="ts">
 import Vue from "vue";
 import Component from "vue-class-component";
+import store from "@/store";
 
 @Component
 export default class extends Vue {
-  tableData: any[] = [];
-  datum = {
-    name: "",
-    entity: "root entity",
-    status: "En attente",
-    maker: "DELL",
-    serial: "f1qj5uNhMK",
-    model: "XPS",
-    os: "Windows",
-    place: "1",
-    lastModified: "2019-12-23",
-    cpu: "i7-1056U"
-  };
+  tableData: any[] = store.state.computers;
   dialogVisible = false;
   selectedOption: string = "";
   selectedItems: any[] = [];
@@ -91,6 +80,7 @@ export default class extends Vue {
 
   deleteItem(items: any[]) {
     this.tableData = this.tableData.filter(col => !items.includes(col));
+    store.commit("deleteComputer", { data: this.tableData });
   }
 
   addToList(val: any[]) {
@@ -106,15 +96,6 @@ export default class extends Vue {
     // @ts-ignore
     this[action](selectedItems);
     this.dialogVisible = false;
-  }
-
-  mounted() {
-    for (let i = 0; i < 10; i++) {
-      const data = { ...this.datum };
-      data.name = `Computer ${i + 1}`;
-      data.serial += `${i}`;
-      this.tableData.push(data);
-    }
   }
 }
 </script>
