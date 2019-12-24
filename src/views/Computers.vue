@@ -25,7 +25,7 @@
 
     <div style="float: left">
       <el-button @click="dialogVisible = true">Actions</el-button>
-      <el-button icon="el-icon-plus" circle></el-button>
+      <el-button icon="el-icon-plus" circle @click="goToAddPage()"></el-button>
     </div>
     <el-table :data="tableData" stripe @selection-change="addToList">
       <el-table-column type="selection" width="55"> </el-table-column>
@@ -95,6 +95,10 @@ export default class extends Vue {
 
   addToList(val: any[]) {
     this.selectedItems = val;
+  }
+
+  goToAddPage() {
+    this.$router.push("add");
   }
 
   executeAction() {
