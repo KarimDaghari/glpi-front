@@ -84,6 +84,7 @@ export default class extends Vue {
   }
 
   addToList(val: any[]) {
+    console.log("Val: ", val);
     this.selectedItems = val;
   }
 
