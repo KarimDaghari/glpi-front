@@ -16,12 +16,6 @@ const authGuard = (to: any, from: any, next: Function) => {
 
 const routes = [
   {
-    path: "/",
-    name: "home",
-    component: Home,
-    beforeEnter: authGuard
-  },
-  {
     path: "/login",
     name: "login",
     component: Login
