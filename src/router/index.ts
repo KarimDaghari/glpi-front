@@ -16,7 +16,7 @@ const authGuard = (to: any, from: any, next: Function) => {
 
 const routes = [
   {
-    path: "/login",
+    path: "/",
     name: "login",
     component: Login
   },
